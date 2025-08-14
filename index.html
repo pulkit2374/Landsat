@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My Name in Landsat (Real)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html,
+    body {
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #d3cab8;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .input-section {
+      margin-bottom: 20px;
+    }
+
+    .name-input {
+      padding: 12px 18px;
+      font-size: 18px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      width: 260px;
+      outline: none;
+    }
+
+    .generate-btn {
+      margin-left: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .letter-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: nowrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .letter-img {
+      width: 150px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .blank-space {
+      width: 150px;
+      height: 300px;
+    }
+
+    #hover-info {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      display: none;
+      z-index: 1000;
+    }
+
+    #hover-info a {
+      color: #4FC3F7;
+      text-decoration: none;
+    }
+
+    #hover-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>My Name in Landsat</h1>
+    <div class="input-section">
+      <input type="text" class="name-input" placeholder="Enter your name..." id="nameInput" />
+      <button class="generate-btn" onclick="generateImage()">Generate</button>
+    </div>
+
+    <div class="letter-row" id="letterRow"></div>
+  </div>
+
+  <div id="hover-info"></div>
+
+  <script>
+  let lastHoverInfo = null;
+
+  async function generateImage() {
+    const nameInput = document.getElementById("nameInput");
+    const name = nameInput.value.trim();
+
+    const row = document.getElementById("letterRow");
+    const hoverInfo = document.getElementById("hover-info");
+
+    row.innerHTML = '';
+    hoverInfo.style.display = 'none';
+    hoverInfo.innerHTML = '';
+    lastHoverInfo = null;
+
+    if (!name) {
+      alert("Please enter a name.");
+      return;
+    }
+
+    if (!/^[A-Za-z ]+$/.test(name)) {
+      alert("Only letters and spaces are allowed.");
+      return;
+    }
+
+    if (name.length > 9) {
+      alert("Name must be 9 characters or fewer (including spaces).");
+      return;
+    }
+
+    try {
+      const resp = await fetch("/generate_name/" + name);
+      if (!resp.ok) {
+        const txt = await resp.text();
+        throw new Error(txt);
+      }
+
+      const data = await resp.json();
+
+      for (const l of data.letters) {
+        if (l.character === " ") {
+          const spacer = document.createElement('div');
+          spacer.className = 'blank-space';
+          row.appendChild(spacer);
+          continue;
+        }
+
+        const img = document.createElement('img');
+        img.src = `/letter_db/${l.file}`;
+        img.alt = l.character;
+        img.className = 'letter-img';
+
+        img.addEventListener('mouseenter', () => {
+          const link = `https://maps.google.com/?q=${l.lat},${l.lon}`;
+          const infoHTML = `<strong>${l.character}</strong>: <a href="${link}" target="_blank">${l.scene_id}</a> (lat ${l.lat}, lon ${l.lon})`;
+
+          hoverInfo.innerHTML = infoHTML;
+          hoverInfo.style.display = 'block';
+          lastHoverInfo = infoHTML;
+        });
+
+        row.appendChild(img);
+      }
+
+      // If lastHoverInfo is still null after rendering, do not show hoverInfo yet
+      hoverInfo.style.display = lastHoverInfo ? 'block' : 'none';
+
+    } catch (err) {
+      alert("Failed to load images: " + err.message);
+    }
+  }
+
+  document.getElementById('nameInput').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') generateImage();
+  });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+{
+  "A": [
+    {
+      "variant": 1,
+      "file": "A_1.png",
+      "lat": 60.764639,
+      "lon": 10.945333,
+      "scene_id": "Lake Mjøsa, Norway"
+    },
+    {
+      "variant": 2,
+      "file": "A_2.png",
+      "lat": 62.554917,
+      "lon": -164.936194,
+      "scene_id": "Yukon Delta, Alaska"
+    },
+    {
+      "variant": 3,
+      "file": "A_3.png",
+      "lat": 36.589111,
+      "lon": -89.340806,
+      "scene_id": "Hickman, Kentucky"
+    },
+    {
+      "variant": 4,
+      "file": "A_4.png",
+      "lat": 45.728833,
+      "lon": -69.768028,
+      "scene_id": "Farm Island, Maine"
+    },
+    {
+      "variant": 5,
+      "file": "A_5.png",
+      "lat": 40.664111,
+      "lon": 47.110056,
+      "scene_id": "Lake Guakhmaz, Azerbaijan"
+    }
+  ],
+  "B": [
+    {
+      "variant": 1,
+      "file": "B_1.png",
+      "lat": -7.616694,
+      "lon": -62.921389,
+      "scene_id": "Humaitá, Brazil"
+    },
+    {
+      "variant": 2,
+      "file": "B_2.png",
+      "lat": 35.14475,
+      "lon": -93.054583,
+      "scene_id": "Holla Bend, Arkansas"
+    }
+  ],
+  "C": [
+    {
+      "variant": 1,
+      "file": "C_1.png",
+      "lat": -62.956194,
+      "lon": -60.642444,
+      "scene_id": "Deception Island, Antarctica"
+    },
+    {
+      "variant": 2,
+      "file": "C_2.png",
+      "lat": 30.644361,
+      "lon": -91.445806,
+      "scene_id": "False River, Louisiana"
+    },
+    {
+      "variant": 3,
+      "file": "C_3.png",
+      "lat": 40.787722,
+      "lon": -119.203611,
+      "scene_id": "Black Rock Desert, Nevada"
+    }
+  ],
+
+
+  "D": [
+    {
+      "variant": 1,
+      "file": "D_1.png",
+      "lat": 53.01625,
+      "lon": -81.306833,
+      "scene_id": "Akimiski Island, Canada"
+    },
+    {
+      "variant": 2,
+      "file": "D_2.png",
+      "lat": -32.621611,
+      "lon": 142.072611,
+      "scene_id": "Lake Tandou, Australia"
+    }
+  ],
+  "E": [
+    {
+      "variant": 1,
+      "file": "E_1.png",
+      "lat": 29.263028,
+      "lon": 96.317722,
+      "scene_id": "Firn-filled Fjords, Tibet"
+    },
+    {
+      "variant": 2,
+      "file": "E_2.png",
+      "lat": 54.713972,
+      "lon": 136.572333,
+      "scene_id": "Sea of Okhotsk"
+    },
+    {
+      "variant": 3,
+      "file": "E_3.png",
+      "lat": -20.5,
+      "lon": 158.5,
+      "scene_id": "Bellona Plateau"
+    },
+    {
+      "variant": 4,
+      "file": "E_4.png",
+      "lat": 64.095833,
+      "lon": -16.362667,
+      "scene_id": "Breiðamerkurjökull Glacier, Iceland"
+    }
+  ],
+  "F": [
+    {
+      "variant": 1,
+      "file": "F_1.png",
+      "lat": -28.733694,
+      "lon": 29.208361,
+      "scene_id": "Kruger National Park, South Africa"
+    },
+    {
+      "variant": 2,
+      "file": "F_2.png",
+      "lat": -13.840806,
+      "lon": -55.298611,
+      "scene_id": "Mato Grosso, Brazil"
+    }
+  ],
+
+  "G": [
+    {
+      "variant": 1,
+      "file": "G_1.png",
+      "lat": -2.441889,
+      "lon": -66.278806,
+      "scene_id": "Fonte Boa, Amazonas"
+    }
+  ],
+  "H": [
+    {
+      "variant": 1,
+      "file": "H_1.png",
+      "lat": 52.047333,
+      "lon": 109.780889,
+      "scene_id": "Khorinsky District, Russia"
+    },
+    {
+      "variant": 2,
+      "file": "H_2.png",
+      "lat": 40.234333,
+      "lon": 71.239667,
+      "scene_id": "Southwestern Kyrgyzstan"
+    }
+  ],
+  "I": [
+    {
+      "variant": 1,
+      "file": "I_1.png",
+      "lat": 64.762889,
+      "lon": -22.457778,
+      "scene_id": "Borgarbyggð, Iceland"
+    },
+    {
+      "variant": 2,
+      "file": "I_2.png",
+      "lat": 42.786389,
+      "lon": -77.716139,
+      "scene_id": "Canandaigua Lake, New York"
+    }
+  ],
+  "J": [
+    {
+      "variant": 1,
+      "file": "J_1.png",
+      "lat": 46.686167,
+      "lon": -90.386528,
+      "scene_id": "Lake Superior, North America"
+    },
+    {
+      "variant": 2,
+      "file": "J_2.png",
+      "lat": -18.348694,
+      "lon": 146.847611,
+      "scene_id": "Great Barrier Reef"
+    },
+    {
+      "variant": 3,
+      "file": "J_3.png",
+      "lat": 38.493806,
+      "lon": 38.444306,
+      "scene_id": "Karakaya Dam, Turkey"
+    }
+  ],
+  "K": [
+    {
+      "variant": 1,
+      "file": "K_1.png",
+      "lat": 35.612861,
+      "lon": 95.06275,
+      "scene_id": "Golmud, China"
+    },
+    {
+      "variant": 2,
+      "file": "K_2.png",
+      "lat": 72.083639,
+      "lon": -76.811917,
+      "scene_id": "Sirmilik National Park, Canada"
+    }
+  ], 
+
+  "L": [
+    {
+      "variant": 1,
+      "file": "L_1.png",
+      "lat": 40.067444,
+      "lon": 77.666861,
+      "scene_id": "Xinjiang, China"
+    },
+    {
+      "variant": 2,
+      "file": "L_2.png",
+      "lat": 50.197694,
+      "lon": -104.287611,
+      "scene_id": "Regina, Saskatchewan, Canada"
+    }
+  ],
+  "M": [
+    {
+      "variant": 1,
+      "file": "M_1.png",
+      "lat": 38.775611,
+      "lon": -78.401972,
+      "scene_id": "Potomac River"
+    },
+    {
+      "variant": 2,
+      "file": "M_2.png",
+      "lat": 42.121222,
+      "lon": 80.045583,
+      "scene_id": "Tian Shan Mountains, Kyrgyzstan"
+    },
+    {
+      "variant": 3,
+      "file": "M_3.png",
+      "lat": 38.775611,
+      "lon": -78.401972,
+      "scene_id": "Shenandoah River, Virginia"
+    }
+  ],
+  "N": [
+    {
+      "variant": 1,
+      "file": "N_1.png",
+      "lat": -12.945639,
+      "lon": -50.495,
+      "scene_id": "São Miguel do Araguaia, Brazil"
+    },
+    {
+      "variant": 2,
+      "file": "N_2.png",
+      "lat": -17.30825,
+      "lon": -63.888611,
+      "scene_id": "Yapacani, Bolivia"
+    }
+  ],
+  "O": [
+    {
+      "variant": 1,
+      "file": "O_1.png",
+      "lat": 42.936111,
+      "lon": -122.101306,
+      "scene_id": "Crater Lake, Oregon"
+    },
+    {
+      "variant": 2,
+      "file": "O_2.png",
+      "lat": 51.378444,
+      "lon": -68.674222,
+      "scene_id": "Manicouagan Reservoir"
+    }
+  ],
+  "P": [
+    {
+      "variant": 1,
+      "file": "P_1.png",
+      "lat": -10.878889,
+      "lon": -66.047778,
+      "scene_id": "Riberalta, Bolivia"
+    },
+    {
+      "variant": 2,
+      "file": "P_2.png",
+      "lat": 68.215111,
+      "lon": -134.387583,
+      "scene_id": "Mackenzie River Delta, Canada"
+    }
+  ],
+  "Q": [
+    {
+      "variant": 1,
+      "file": "Q_1.png",
+      "lat": -8.242028,
+      "lon": 117.992,
+      "scene_id": "Mount Tambora, Indonesia"
+    },
+    {
+      "variant": 2,
+      "file": "Q_2.png",
+      "lat": 19.976889,
+      "lon": 76.5085,
+      "scene_id": "Lonar Crater, India"
+    }
+  ],
+  
+  "R": [
+    {
+      "variant": 1,
+      "file": "R_1.png",
+      "lat": 46.293972,
+      "lon": 9.420694,
+      "scene_id": "Province of Sondrio, Italy"
+    },
+    {
+      "variant": 2,
+      "file": "R_2.png",
+      "lat": 24.758444,
+      "lon": -81.531556,
+      "scene_id": "Florida Keys"
+    },
+    {
+      "variant": 3,
+      "file": "R_3.png",
+      "lat": 38.441056,
+      "lon": -109.750917,
+      "scene_id": "Canyonlands National Park, Utah"
+    }
+  ],
+  "S": [
+    {
+      "variant": 1,
+      "file": "S_1.png",
+      "lat": 68.416944,
+      "lon": -134.143111,
+      "scene_id": "Mackenzie River"
+    },
+    {
+      "variant": 2,
+      "file": "S_2.png",
+      "lat": 12.007694,
+      "lon": 15.062833,
+      "scene_id": "N’Djamena, Chad"
+    },
+    {
+      "variant": 3,
+      "file": "S_3.png",
+      "lat": -16.934639,
+      "lon": -65.228944,
+      "scene_id": "Rio Chapare, Bolivia"
+    }
+  ],
+  "T": [
+    {
+      "variant": 1,
+      "file": "T_1.png",
+      "lat": 72.877861,
+      "lon": 129.531972,
+      "scene_id": "Lena River Delta"
+    },
+    {
+      "variant": 2,
+      "file": "T_2.png",
+      "lat": 23.175,
+      "lon": 53.797999,
+      "scene_id": "Liwa, United Arab Emirates"
+    }
+  ],
+  "U": [
+    {
+      "variant": 1,
+      "file": "U_1.png",
+      "lat": 38.269194,
+      "lon": -109.92575,
+      "scene_id": "Canyonlands National Park, Utah"
+    },
+    {
+      "variant": 2,
+      "file": "U_2.png",
+      "lat": 41.323889,
+      "lon": -105.770528,
+      "scene_id": "Bamforth National Wildlife Refuge, Wyoming"
+    }
+  ],
+  "V": [
+    {
+      "variant": 1,
+      "file": "V_1.png",
+      "lat": 46.1115,
+      "lon": 12.757389,
+      "scene_id": "Cellina and Meduna Rivers, Italy"
+    },
+    {
+      "variant": 2,
+      "file": "V_2.png",
+      "lat": 46.544583,
+      "lon": -68.251778,
+      "scene_id": "Mapleton, Maine"
+    },
+    {
+      "variant": 3,
+      "file": "V_3.png",
+      "lat": -34.286444,
+      "lon": 150.825667,
+      "scene_id": "New South Wales, Australia"
+    }
+  ],
+  "W": [
+    {
+      "variant": 1,
+      "file": "W_1.png",
+      "lat": 5.449417,
+      "lon": -69.799167,
+      "scene_id": "La Primavera, Columbia"
+    },
+    {
+      "variant": 2,
+      "file": "W_2.png",
+      "lat": 67.036361,
+      "lon": 40.338694,
+      "scene_id": "Ponoy River, Russia"
+    }
+  ],
+  "X": [
+    {
+      "variant": 1,
+      "file": "X_1.png",
+      "lat": 66.618111,
+      "lon": -36.368306,
+      "scene_id": "Sermersooq Municipality, Greenland"
+    },
+    {
+      "variant": 2,
+      "file": "X_2.png",
+      "lat": 76.734389,
+      "lon": -68.606472,
+      "scene_id": "Wolstenholme Fjord, Greenland"
+    }
+  ],
+  "Y": [
+    {
+      "variant": 1,
+      "file": "Y_1.png",
+      "lat": -43.522056,
+      "lon": 170.831583,
+      "scene_id": "Ramsay, New Zealand"
+    },
+    {
+      "variant": 2,
+      "file": "Y_2.png",
+      "lat": -37.267333,
+      "lon": -72.728583,
+      "scene_id": "Bíobío River, Chile"
+    },
+    {
+      "variant": 3,
+      "file": "Y_3.png",
+      "lat": -5.864833,
+      "lon": -80.730944,
+      "scene_id": "Estuario de Virrila, Peru"
+    }
+  ],
+  "Z": [
+    {
+      "variant": 1,
+      "file": "Z_1.png",
+      "lat": 34.988694,
+      "lon": 4.389111,
+      "scene_id": "Mohammed Boudiaf, Algeria"
+    },
+    {
+      "variant": 2,
+      "file": "Z_2.png",
+      "lat": -15.494139,
+      "lon": -54.340972,
+      "scene_id": "Primavera do Leste, Brazil"
+    }
+  ]
+}
