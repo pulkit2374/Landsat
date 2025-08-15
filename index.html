@@ -6,100 +6,141 @@
   <title>My Name in Landsat (Real)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    html,
-    body {
-      overflow: hidden;
-    }
+  html,
+  body {
+    overflow: hidden;
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #d3cab8;
-      margin: 0;
-      padding: 20px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: #d3cab8;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .container {
-      max-width: 1200px;
-      width: 100%;
-      text-align: center;
-    }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
 
-    h1 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
+  h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
 
-    .input-section {
-      margin-bottom: 20px;
-    }
+  .input-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 
-    .name-input {
-      padding: 12px 18px;
-      font-size: 18px;
-      border: 2px solid #ddd;
-      border-radius: 25px;
-      width: 260px;
-      outline: none;
-    }
+  .name-input {
+    padding: 12px 18px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 260px;
+    outline: none;
+  }
 
-    .generate-btn {
-      margin-left: 10px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background: linear-gradient(45deg, #3498db, #2980b9);
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
+  .generate-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
 
-    .letter-row {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-wrap: nowrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
+  .letter-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 12px;
+    margin-top: 30px;
+  }
 
-    .letter-img {
-      width: 150px;
-      height: 300px;
-      object-fit: cover;
-    }
+  .letter-img {
+    width: 150px;
+    height: 300px;
+    object-fit: cover;
+  }
 
+  .blank-space {
+    width: 150px;
+    height: 300px;
+  }
+
+  #hover-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 16px;
+    display: none;
+    z-index: 1000;
+  }
+
+  #hover-info a {
+    color: #4FC3F7;
+    text-decoration: none;
+  }
+
+  #hover-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* 📱 Mobile adjustments */
+  @media (max-width: 768px) {
+    .letter-img,
     .blank-space {
-      width: 150px;
-      height: 300px;
+      width: 120px;
+      height: 240px;
     }
 
     #hover-info {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      color: white;
-      text-align: center;
-      padding: 10px 0;
+      font-size: 14px;
+      padding: 8px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .letter-img,
+    .blank-space {
+      width: 100px;
+      height: 200px;
+    }
+
+    .name-input {
+      width: 200px;
       font-size: 16px;
-      display: none;
-      z-index: 1000;
     }
 
-    #hover-info a {
-      color: #4FC3F7;
-      text-decoration: none;
+    .generate-btn {
+      font-size: 14px;
+      padding: 10px 16px;
     }
 
-    #hover-info a:hover {
-      text-decoration: underline;
+    #hover-info {
+      font-size: 12px;
+      padding: 6px 0;
     }
-  </style>
+  }
+</style>
+
 </head>
 
 <body>
