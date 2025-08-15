@@ -1,146 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <title>My Name in Landsat (Real)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-  html,
-  body {
-    overflow: hidden;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background: #d3cab8;
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-  }
-
-  h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-
-  .input-section {
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .name-input {
-    padding: 12px 18px;
-    font-size: 18px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    width: 260px;
-    outline: none;
-  }
-
-  .generate-btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    background: linear-gradient(45deg, #3498db, #2980b9);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-  }
-
-  .letter-row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap; /* Allows wrapping */
-    gap: 12px;
-    margin-top: 30px;
-  }
-
-  .letter-img {
-    width: 150px;
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .blank-space {
-    width: 150px;
-    height: 300px;
-  }
-
-  #hover-info {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 16px;
-    display: none;
-    z-index: 1000;
-  }
-
-  #hover-info a {
-    color: #4FC3F7;
-    text-decoration: none;
-  }
-
-  #hover-info a:hover {
-    text-decoration: underline;
-  }
-
-  /* 📱 Mobile adjustments */
-  @media (max-width: 768px) {
-    .letter-img,
-    .blank-space {
-      width: 120px;
-      height: 240px;
+    /* Allow vertical scroll on mobile */
+    html, body {
+      height: 100%;
+      overflow-x: hidden; /* prevent sideways jiggle */
+      overflow-y: auto;   /* allow vertical scroll */
     }
 
-    #hover-info {
-      font-size: 14px;
-      padding: 8px 0;
+    body {
+      font-family: Arial, sans-serif;
+      background: #d3cab8;
+      margin: 0;
+      padding: 20px;
+      min-height: 100dvh; /* better than 100vh for mobile */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
+      padding-bottom: calc(64px + env(safe-area-inset-bottom)); /* room for hover bar */
     }
-  }
 
-  @media (max-width: 480px) {
-    .letter-img,
-    .blank-space {
-      width: 100px;
-      height: 200px;
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .input-section {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     .name-input {
-      width: 200px;
-      font-size: 16px;
+      padding: 12px 18px;
+      font-size: 18px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      width: 260px;
+      outline: none;
     }
 
     .generate-btn {
-      font-size: 14px;
-      padding: 10px 16px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .letter-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: wrap; /* Allows wrapping */
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .letter-img {
+      width: 150px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .blank-space {
+      width: 150px;
+      height: 300px;
     }
 
     #hover-info {
-      font-size: 12px;
-      padding: 6px 0;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+      display: none;
+      z-index: 1000;
+      min-height: 48px; /* keeps height consistent */
     }
-  }
-</style>
 
+    #hover-info a {
+      color: #4FC3F7;
+      text-decoration: none;
+    }
+
+    #hover-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* 📱 Tablet adjustments */
+    @media (max-width: 768px) {
+      .letter-img,
+      .blank-space {
+        width: 120px;
+        height: 240px;
+      }
+
+      #hover-info {
+        font-size: 14px;
+        padding: 8px 0;
+      }
+    }
+
+    /* 📱 Phone adjustments */
+    @media (max-width: 480px) {
+      .letter-img,
+      .blank-space {
+        width: 100px;
+        height: 200px;
+      }
+
+      .name-input {
+        width: 200px;
+        font-size: 16px;
+      }
+
+      .generate-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+
+      #hover-info {
+        font-size: 12px;
+        padding: 6px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -150,89 +154,85 @@
       <input type="text" class="name-input" placeholder="Enter your name..." id="nameInput" />
       <button class="generate-btn" onclick="generateImage()">Generate</button>
     </div>
-
     <div class="letter-row" id="letterRow"></div>
   </div>
 
   <div id="hover-info"></div>
 
   <script>
-  let lastHoverInfo = null;
+    let lastHoverInfo = null;
 
-  async function generateImage() {
-    const nameInput = document.getElementById("nameInput");
-    const name = nameInput.value.trim();
+    async function generateImage() {
+      const nameInput = document.getElementById("nameInput");
+      const name = nameInput.value.trim();
 
-    const row = document.getElementById("letterRow");
-    const hoverInfo = document.getElementById("hover-info");
+      const row = document.getElementById("letterRow");
+      const hoverInfo = document.getElementById("hover-info");
 
-    row.innerHTML = '';
-    hoverInfo.style.display = 'none';
-    hoverInfo.innerHTML = '';
-    lastHoverInfo = null;
+      row.innerHTML = '';
+      hoverInfo.style.display = 'none';
+      hoverInfo.innerHTML = '';
+      lastHoverInfo = null;
 
-    if (!name) {
-      alert("Please enter a name.");
-      return;
-    }
-
-    if (!/^[A-Za-z ]+$/.test(name)) {
-      alert("Only letters and spaces are allowed.");
-      return;
-    }
-
-    if (name.length > 9) {
-      alert("Name must be 9 characters or fewer (including spaces).");
-      return;
-    }
-
-    try {
-      const resp = await fetch("/generate_name/" + name);
-      if (!resp.ok) {
-        const txt = await resp.text();
-        throw new Error(txt);
+      if (!name) {
+        alert("Please enter a name.");
+        return;
       }
 
-      const data = await resp.json();
+      if (!/^[A-Za-z ]+$/.test(name)) {
+        alert("Only letters and spaces are allowed.");
+        return;
+      }
 
-      for (const l of data.letters) {
-        if (l.character === " ") {
-          const spacer = document.createElement('div');
-          spacer.className = 'blank-space';
-          row.appendChild(spacer);
-          continue;
+      if (name.length > 9) {
+        alert("Name must be 9 characters or fewer (including spaces).");
+        return;
+      }
+
+      try {
+        const resp = await fetch("/generate_name/" + name);
+        if (!resp.ok) {
+          const txt = await resp.text();
+          throw new Error(txt);
         }
 
-        const img = document.createElement('img');
-        img.src = `/letter_db/${l.file}`;
-        img.alt = l.character;
-        img.className = 'letter-img';
+        const data = await resp.json();
 
-        img.addEventListener('mouseenter', () => {
-          const link = `https://maps.google.com/?q=${l.lat},${l.lon}`;
-          const infoHTML = `<strong>${l.character}</strong>: <a href="${link}" target="_blank">${l.scene_id}</a> (lat ${l.lat}, lon ${l.lon})`;
+        for (const l of data.letters) {
+          if (l.character === " ") {
+            const spacer = document.createElement('div');
+            spacer.className = 'blank-space';
+            row.appendChild(spacer);
+            continue;
+          }
 
-          hoverInfo.innerHTML = infoHTML;
-          hoverInfo.style.display = 'block';
-          lastHoverInfo = infoHTML;
-        });
+          const img = document.createElement('img');
+          img.src = `/letter_db/${l.file}`;
+          img.alt = l.character;
+          img.className = 'letter-img';
 
-        row.appendChild(img);
+          img.addEventListener('mouseenter', () => {
+            const link = `https://maps.google.com/?q=${l.lat},${l.lon}`;
+            const infoHTML = `<strong>${l.character}</strong>: <a href="${link}" target="_blank">${l.scene_id}</a> (lat ${l.lat}, lon ${l.lon})`;
+
+            hoverInfo.innerHTML = infoHTML;
+            hoverInfo.style.display = 'block';
+            lastHoverInfo = infoHTML;
+          });
+
+          row.appendChild(img);
+        }
+
+        hoverInfo.style.display = lastHoverInfo ? 'block' : 'none';
+
+      } catch (err) {
+        alert("Failed to load images: " + err.message);
       }
-
-      // If lastHoverInfo is still null after rendering, do not show hoverInfo yet
-      hoverInfo.style.display = lastHoverInfo ? 'block' : 'none';
-
-    } catch (err) {
-      alert("Failed to load images: " + err.message);
     }
-  }
 
-  document.getElementById('nameInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') generateImage();
-  });
-</script>
-
+    document.getElementById('nameInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') generateImage();
+    });
+  </script>
 </body>
-
 </html>
