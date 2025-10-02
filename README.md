@@ -1,4 +1,4 @@
-<img width="1875" height="952" alt="LandSat_1" src="https://github.com/user-attachments/assets/1ba4434a-f4cf-4455-93b1-55d7041b557e" />
+
 # **LandSat – Satellite Imagery Word Generator**
 
 🔗 **Live Demo:** [https://landsat.onrender.com/]
